@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>C Types</h1>
+
+    <h2>What does Static Typing Mean?</h2>
+    <p>
+      C is a statically typed language. This means that variables must
+      be declared with a type and cannot change through the lifetime
+      of the program. In a dynamicly typed language such as Ruby or
+      Javascript, variables can hold data of any type over their
+      lifetime. For example, in Javascript:
+    </p>
+
+    <pre>
+> var dyanmicVar;
+undefined
+> dynamicVar = "a string";
+'a string'
+> typeof dynamicVar;
+'string'
+> dynamicVar = 2;
+2
+> typeof dynamicVar;
+'number'
+    </pre>
+
+    <p>Now lets try the same thing in C</p>
+
+    <pre>
+NSString *staticVar = @"a string";
+staticVar = 2;
+    </pre>
+
+    <p>
+      This should generate a compilre error <code>Implicit conversion of
+      'int' to 'NSString *' is disallowed with ARC</code>. The first major difference
+      here is that there is a program called the compiler that is attempting
+      to enforce type correctness. While this can be irritating at first,
+      static typing can also help catch errors in your programs. For example,
+      in the Javascript program above, what if some part of the program was expecing
+      <code>dynamicVar</code> to be a string. You wouldn't know there was an issue until
+      actually executing the program. And then, you would have to back up 
+      to the location where <code>dynamicVar</code> was assigned a non-string. 
+    </p>
+
+    <p>
+      Dynamic vs. static typing is one of those issues in programming
+      language design that people feel strongly about. Ultimatley we
+      don't have a choice since Objective-C was chosen for us, so lets
+      learn to take advantage of the warnings and errors given by the
+      compiler.
+    </p>
+
+    <h2>C Built-In Types</h2>
+
+    <dl>
+      <dt>
+	<code>
+	  short, int, long, NSInteger
+	</code>
+      </dt>
+      <dd>
+	Represent integers. <code>short</code> holds smaller numbers
+	than <code>int</code>, which is smaller
+	than <code>long</code>. <code>NSInteger</code> is a type
+	provided by Apple that is an integer of the ideal size for the
+	current platform, be it iOS or OS X.
+      </dd>
+      <dt><code>float, double, CGFloat</code></dt>
+      <dd>
+	Decimal numbers, <code>double</code> is capable of storing
+	higher precision numbers than <code>float</code>, but uses up
+	double the storage space. CGFloat is the decimal type used by
+	the iOS Core Graphics framework.
+      </dd>
+      <dt><code>char</code></dt>
+      <dd>
+	The C type to handle a single letter. We will rarely use this
+	as we use Objective-C NSString instances instead.
+      </dd>
+      <dt>Pointer</dt>
+      <dd>
+	Pointers are variables that "point" to other variables. In
+	Objective-C, we never deal with objects directly, but instead
+	pass around pointers to them. This is why when we declare an
+	object, the variable that we store is a pointer to the object.<br>
+	<code>NSDate *today = [NSDate date];</code><br>
+        Technically we say that "today is a pointer to an NSDate,"
+        however since objects are always stored as pointers, normally
+        you will just say that "today is an NSDate."
+      </dd>
+      <dt><code>struct</code></dt>
+      <dd>
+	Structures are composite types. They allow us to group together data
+	into a more complicated concept. For example I want a type Location
+	that knows the name, latitude, and longitude of a location and the number
+	of times I had visited that place.
+<pre>
+typedef struct {
+  float latitude;
+  float longitude;
+  int visits;
+} Location;
+</pre>
+Elements of a struct are accessed using dot notation.
+<pre>
+Location theFactory;
+theFactory.latitude = 42.963107; 
+theFactory.longitude = -85.669407;
+theFactory.visits = 42;
+</pre>
+Structs are used frequently in iOS development. Try looking up NSRect
+in the XCode documentation.  NSRects are used to represent the
+location of a user interface element
+      </dd>
+    </dl>
+
+    <p>
+      That's all there is. With nothing but numbers, words, and
+      collections of the two, we can describe most any concept you
+      want.
+    </p>
+
+    <footer>
+      <dl>
+	<dt>Prev</dt>
+	<dd><a href="hello_world.html">Hello World!</a></dd>
+	<dt>Next</dt>
+	<dd><a href="format_strings.html">Format Strings</a></dd>
+      </dl>
+    </footer>
+  </body>
+</html>

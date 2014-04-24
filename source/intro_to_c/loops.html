@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Loops</h1>
+
+    <p>
+      Computers were invented to perform repetative tasks, so we need
+      tools to make performing the same action over and over again
+      easy.  There are two main looping constructs for this task:
+      while and for loops.
+    </p>
+
+    <h2>While</h2>
+
+    <p>
+      <code>while</code> loops are useful when the loop will be performed an unknown
+      number of times, instead terminating when some condition is met.
+    </p>      
+    <pre>
+while (condition) {
+  // Perform this task until condition is false
+}
+    </pre>
+    <p>
+      It is important to make sure that the body of the loop will eventually
+      cause the condition to be false, otherwise your program can run forever.
+    </p>
+
+    <h2>For</h2>
+    
+    <p>
+      <code>for</code> loops are used when a block of code should be
+      run a known number of times, or the block of code needs access
+      to the iteration variable.
+    </p>
+    <pre>
+for (int i = 0; i < 10; ++i) {
+  // Perform this as long as i is less than 10
+}
+    </pre>
+
+    <p>
+      We have access to the counting variable inside of the loop. This can be
+      used, for example, to print out the numbers between 1 and 10.
+    </p>
+    <pre>
+for (int i = 1; i <= 10; ++i) {
+  NSLog(@"The number is: %d", i);
+}
+   </pre>
+
+    <footer>
+      <dl>
+	<dt>Prev</dt>
+	<dd><a href="if_else.html">If / Else</a></dd>
+	<dt>Next</dt>
+	<dd><a href="functions.html">Functions</a></dd>
+      </dl>
+    </footer>
+  </body>
+</html>

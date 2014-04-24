@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>A Summary of C</h1>
+
+    <h2>Types</h2>
+    <dl>
+      <dt>
+	<code>
+	  short, int, long, NSInteger
+	</code>
+      </dt>
+      <dd>
+	Represent integers. <code>short</code> holds smaller numbers
+	than <code>int</code>, which is smaller
+	than <code>long</code>. <code>NSInteger</code> is a type
+	provided by Apple that is an integer of the ideal size for the
+	current platform, be it iOS or OS X.
+      </dd>
+      <dt><code>float, double, CGFloat</code></dt>
+      <dd>
+	Decimal numbers, <code>double</code> is capable of storing
+	higher precision numbers than <code>float</code>, but uses up
+	double the storage space. CGFloat is the decimal type used by
+	the iOS Core Graphics framework.
+      </dd>
+      <dt>Pointer</dt>
+      <dd>
+	Pointers are variables that "point" to other variables. In
+	Objective-C, we never deal with objects directly, but instead
+	pass around pointers to them. This is why when we declare an
+	object, the variable that we store is a pointer to the object.<br>
+	<code>NSDate *today = [NSDate date];</code><br>
+        Technically we say that "today is a pointer to an NSDate,"
+        however since objects are always stored as pointers, normally
+        you will just say that "today is an NSDate."
+      </dd>
+      <dt><code>struct</code></dt>
+      <dd>
+	Structures are composite types. They allow us to group together data
+	into a more complicated concept. For example I want a type Location
+	that knows the name, latitude, and longitude of a location and the number
+	of times I had visited that place.
+	<pre>
+typedef struct {
+  float latitude;
+  float longitude;
+  int visits;
+} Location;
+	</pre>
+	Elements of a struct are accessed using dot notation.
+	<pre>
+Location theFactory;
+theFactory.latitude = 42.963107; 
+theFactory.longitude = -85.669407;
+theFactory.visits = 42;
+	</pre>
+	Structs are used frequently in iOS development. Try looking up NSRect
+	in the XCode documentation.  NSRects are used to represent the
+	location of a user interface element
+      </dd>
+    </dl>
+
+    <h2>Format Strings</h2>
+    <dl>
+      <dt>Integers</dt>
+      <dd>%i</dd>
+      <dt>Decimals (floats)</dt>
+      <dd>%f</dd>
+      <dt>NSString</dt>
+      <dd>%@</dd>
+    </dl>
+    <pre>
+NSString *name = @"Imp";
+float height = 3.43;
+int age = 4000;
+NSLog(@"I saw a %@ that was %f feet tall and %d years old", name, height, age);
+    </pre>
+
+    <h2>Conditionals </h2>
+    <pre>
+if (condition) {
+  // Do if condition is true
+} else {
+  // Do if condition is false
+}
+    </pre>
+
+    <h2>Loops</h2>
+
+    <h3>While</h3>
+    <pre>
+while (condition) {
+  // Run this as long as condition is true
+}
+    </pre>
+
+    <h3>For</h3>
+    <pre>
+for (initialize; test; increment) {
+// Run this as long as test passes, preform increment 
+// at the end of every loop
+}
+    </pre>
+
+    <h2>Functions</h2>
+
+    <pre>
+rtype functionName(type1 arg1, type2 arg2)
+    </pre>
+
+    <h2>Including Libraries</h2>
+    <pre>
+#import <math.h> // Angle brackets for accessing built-in functions
+#import "MyAwesomeUtility.h" // Quotes for accessing user functions
+    </pre>
+
+    <footer>
+      <dl>
+	<dt>Prev</dt>
+	<dd><a href="import.html">Importing Libraries</a></dd>
+      </dl>
+    </footer>
+  </body>
+</html>
