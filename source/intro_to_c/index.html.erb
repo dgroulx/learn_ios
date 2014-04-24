@@ -1,0 +1,11 @@
+---
+title: Introduction to C
+---
+
+<% section = data.sitemap.sections.select{ |section| section[:dir] == current_resource.path.split('/').first }.first %>
+
+<ol>
+  <% section[:pages].each do |page| %>
+  <li><a href="<%= page[:template] %>.html"><%= page[:name] %></a></li>
+  <% end %>
+</ol>

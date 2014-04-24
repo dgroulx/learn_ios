@@ -1,0 +1,62 @@
+{
+  "sections": [
+    {
+      "title": "Intro to C",
+      "dir": "intro_to_c",
+      "pages": [
+	{
+	  "name": "Intro to C",
+	  "template": "intro_to_c"
+	},
+	{
+	  "name": "Hello World!",
+	  "template": "hello_world"
+	},
+	{
+	  "name": "C Types",
+	  "template": "c_types"
+	},
+	{
+	  "name": "Format String",
+	  "template": "format_strings"
+	},
+	{
+	  "name": "Import",
+	  "template": "import"
+	},
+	{
+	  "name": "Maths",
+	  "template": "maths"
+	},
+	{
+	  "name": "If / Else",
+	  "template": "if_else"
+	},
+	{
+	  "name": "Loops",
+	  "template": "loops"
+	},
+	{
+	  "name": "Functions",
+	  "template": "functions"
+	},
+	{
+	  "name": "C Summary",
+	  "template": "c_summary"
+	}
+      ]
+    },
+    {
+      "title": "Intro to Object Oriented Programming",
+      "dir": "intro_to_oop",
+      "pages": [
+	"using_objects",
+	"our_first_obejct",
+	"properties",
+	"encapsulation",
+	"state_and_behavior",
+	"oop_summary"
+      ]
+    }
+  ]
+}

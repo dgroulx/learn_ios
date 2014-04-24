@@ -1,0 +1,61 @@
+---
+title: Importing Libraries
+---
+
+<p>
+  Libraries in C are split into two files, the interface, or
+  header file (.h) and implementation (.m).  The header tells the
+  user what functionality is provided by the library. The
+  implementation has the actual code. In this way it is easy to
+  provide users with the interface files, and then give them a
+  binary version of the library such that you can keep the
+  implementation private.
+</p>
+
+<h2>Frameworks</h2>
+
+<p>
+  Frameworks are a concept unique to OS X and iOS. Frameworks are
+  folders that group together headers, binaries, and documentation
+  for easy distribution. To see the various frameworks on your
+  system, open <code>/System/Library/Frameworks</code> from the Finder. Despite
+  looking like little legos, these are really just folders that
+  you can double click on and look inside. In the Hello World
+  program, we imported the Fondation framework with the line<br>
+  <code>@import Foundation;</code>
+</p>
+
+<h2>System Libraries</h2>
+
+<p>
+  System libraries are functionality that is outside of the C
+  language defintion but are considered part of the standard
+  language library. While much of the functionality of the C
+  standard library will be superceeded by iOS frameworks, we
+  do occasionally need to use the C standard librarys, for
+  example the math library.<br>
+  <code>#import &lt;math.h&gt;</code><br>
+  Commands that start with the '#' character are known as
+  preprocessor directives. There are many of these, but
+  <code>#import</code> is the most common one we will use. The
+  angle brackets are what specify that this is a system library.
+</p>
+
+<h2>Custom Libraries</h2>
+
+<p>
+  Custom libraries are code that we develop and want to reuse. They
+  are included almost identically to ystem libraries:<br>
+  <code>#import "console.h"</code><br>
+  Note the quotation marks. This means that the compiler will look for
+  <code>console.h</code> in local paths.
+</p>
+
+<footer>
+  <dl>
+    <dt>Prev</dt>
+    <dd><a href="functions.html">Functions</a></dd>
+    <dt>Next</dt>
+    <dd><a href="c_summary.html">Summary of C</a></dd>
+  </dl>
+</footer>

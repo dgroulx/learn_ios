@@ -23,6 +23,11 @@
 # with_layout :admin do
 #   page "/admin/*"
 # end
+with_layout :topic_page do
+  data.sitemap.sections.each do |section|
+    page "#{section[:dir]}/*"
+  end
+end
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {

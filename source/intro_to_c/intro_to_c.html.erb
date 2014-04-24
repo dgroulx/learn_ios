@@ -1,0 +1,33 @@
+---
+title: Introduction to C
+---
+
+<p>
+  Objective-C is the language of native iOS develoment. Objective-C is
+  a strict superset of the C language. C was developed in the early
+  70s as a "portable assembler." It is a relatively small, simple
+  language that exposes much of how the computer actually works. There
+  are a few implications of being a strict superset of the C language
+
+  <h2>Advantages</h2>
+  <ul>
+    <li>No need for FFI, we can use all existing C code as-is, i.e zlib, readline, and OpenGL.</li>
+    <li>Direct access to the hardware when you absolutely need it</li>
+    <li>
+      The language used in all of Apple's 'Core' frameworks: CoreImage, CoreVideo, CoreGraphics, CoreAudio,
+      CoreLocation, CoreMotion, dear god it's worse than iThingies.
+    </li>
+  </ul>
+
+  <h2>Disadvantages</h2>
+  <ul>
+    <li>Gives you enough rope to hang yourself with</li>
+    <li>Objective-C can be held back by the slower moving C standard, for example the lack of namespaces.</li>
+  </ul>
+  
+<p>
+  Objective-C takes the C language as is, using the same syntax for
+  functions, variables and flow control while adding it's own syntax
+  for dynamic object oriented programing. We'll begin by studying
+  these features
+</p>

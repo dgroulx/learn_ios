@@ -1,0 +1,131 @@
+---
+title: Hello World
+---
+
+<p>
+  Lets examine the standard "Hello World!" program in Objective-C. Unlike languages
+  such as Javascript or Python, C can feel heavy on ceremony at first. But it's
+  not really that bad. Lets go through it section by section.
+</p>
+
+<pre>
+//
+//  main.m
+//  HelloWorld
+//
+//  Created by David Groulx on 4/22/14.
+//  Copyright (c) 2014 David Groulx. All rights reserved.
+//
+
+@import Foundation;
+
+int main(int argc, const char * argv[]) {
+
+  @autoreleasepool {
+
+    // insert code here...
+    NSLog(@"Hello, World!");
+
+  }
+
+  return 0;
+}
+</pre>
+
+<h2>Comments</h2>
+
+<pre>   
+//
+//  main.m
+//  HelloWorld
+//
+//  Created by David Groulx on 4/22/14.
+//  Copyright (c) 2014 David Groulx. All rights reserved.
+//
+</pre>
+
+<p>
+  Any text between <code>//</code> and the end of a line will be ignored. Comments can also appear after
+  a line of code, for example:
+
+  <pre>
+float speed; // m/s^2
+  </pre>      
+      
+  <h2>Imports</h2>
+
+  <pre>
+@import Foundation;
+  </pre>
+
+<p>
+  C provides very little functionality by default. Instead we need to
+  explicilty bring in extra libraries to do some work. Foundation is
+  an Apple library that provides the most basic function. Note
+  that <code>@import</code> is an Objective-C function, as can be seen
+  by starting with the '@' character. This is the new iOS7 way of
+  including libraries. Older codebases will use <code>#import
+  &lt;Foundation/Foundation.h&gt;</code>, however since we are
+  focusing on iOS7 and up, we will be using as many modern features as
+  we can.
+</p>
+
+<h2>The main() Function</h2>
+
+<pre>
+int main(int argc, const char * argv[]) { ... }
+</pre>
+
+<p>
+  Functions can be named almost anything you like, however the name main is special.
+  <code>main()</code> is always the entry point into a given
+  program. Unlike scripting languages which will start executing from
+  the top of the file, a C program always starts with a call
+  to <code>main()</code>. The arguments
+  to <code>main</code>, <code>argc</code> and <code>argv</code>, are
+  the number of command line arguments, and an array of strings
+  representing those arguments repsectively. In developing for iOS
+  this code will always be there, but you won't need to change or
+  modify it in any way. The details of function declaration will be
+  covered in a bit, but nfor now know there is nothing special about
+  the main function other than it's name.
+</p>
+
+<h2>@autorelease</h2>
+
+<pre>
+@autoreleasepool { ... }
+</pre>
+
+<p>
+  Again we see the '@' symbol is a feature of
+  Objective-C. @autorelease sets up Automated Reference Counting,
+  or ARC, Apple's solution for managing memory. Don't worry about
+  it too much for now.
+</p>
+
+<h2>Calling a Library Function</h2>
+
+<pre>
+NSLog(@"Hello, World!");
+</pre>
+
+<p>
+  This line calls the Foundation function NSLog with the argument
+  @"Hello, World!". Again the '@' symbol means that we are using
+  Objective-C. In this case, @"some words" creates an Objective-C
+  string. We could use C-style strings, however string handling in C
+  is atrocious so we'll stick with Objective-C style when we can.
+</p>
+
+<h2>Returning a Value from a Function</h2>
+
+<pre>
+return 0;
+</pre>
+
+<p>
+  Functions in C do not implicitly return values, instead they must
+  be specified by the <code>return</code> keyword. By convention in C,
+  returning a value means that the program ended without problems.
+</p>
