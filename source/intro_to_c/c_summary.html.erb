@@ -1,64 +1,10 @@
-<h1>A Summary of C</h1>
+---
+title: C Summary
+---
 
 <h2>Types</h2>
-<dl>
-  <dt>
-    <code>
-      short, int, long, NSInteger
-    </code>
-  </dt>
-  <dd>
-    Represent integers. <code>short</code> holds smaller numbers
-    than <code>int</code>, which is smaller
-    than <code>long</code>. <code>NSInteger</code> is a type provided
-    by Apple that is an integer of the ideal size for the current
-    platform, be it iOS or OS X.
-  </dd>
-  <dt><code>float, double, CGFloat</code></dt>
-  <dd>
-    Decimal numbers, <code>double</code> is capable of storing
-    higher precision numbers than <code>float</code>, but uses up
-    double the storage space. CGFloat is the decimal type used by
-    the iOS Core Graphics framework.
-  </dd>
-  <dt>Pointer</dt>
-  <dd>
-    Pointers are variables that "point" to other variables. In
-    Objective-C, we never deal with objects directly, but instead
-    pass around pointers to them. This is why when we declare an
-    object, the variable that we store is a pointer to the object.<br>
-    <code>NSDate *today = [NSDate date];</code><br>
-    Technically we say that "today is a pointer to an NSDate,"
-    however since objects are always stored as pointers, normally
-    you will just say that "today is an NSDate."
-  </dd>
-  <dt><code>struct</code></dt>
-  <dd>
-    Structures are composite types. They allow us to group together data
-    into a more complicated concept. For example I want a type Location
-    that knows the name, latitude, and longitude of a location and the number
-    of times I had visited that place.
-  </dd>
-  <pre>
-typedef struct {
-  float latitude;
-  float longitude;
-  int visits;
-} Location;
-  </pre>
 
-  <p>Elements of a struct are accessed using dot notation.</p>
-
-  <pre>
-Location theFactory;
-theFactory.latitude = 42.963107; 
-theFactory.longitude = -85.669407;
-theFactory.visits = 42;
-  </pre>
-  Structs are used frequently in iOS development. Try looking up NSRect
-  in the XCode documentation.  NSRects are used to represent the
-  location of a user interface element
-</dl>
+<%= partial :types %>
 
 <h2>Format Strings</h2>
 <dl>
@@ -113,3 +59,20 @@ rtype functionName(type1 arg1, type2 arg2)
 #import <math.h> // Angle brackets for accessing built-in functions
 #import "MyAwesomeUtility.h" // Quotes for accessing user functions
 </pre>
+
+<section>
+  <h1>Excersizes</h1>
+
+  <ol>
+    <li>
+      Write a program that will convert temperatures from Celsius to
+      Farenheit and back. The program will do this until the user
+      decides to quit.
+    </li>
+    <li>
+      Write a text-based adventure game. The player starts at a random
+      location and must find the treasure. Represent the player, treasure,
+      and map extent with structs. 
+    </li>
+  </ol>
+</section>

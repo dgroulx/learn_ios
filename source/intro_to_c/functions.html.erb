@@ -1,3 +1,73 @@
 ---
 title: Functions
 ---
+
+<p>
+  Functions are reuseable procedures that may optionally accept arguments
+  and return values. In Objective-C, functions must be declared before
+  they are used. A function declaration takes the form
+</p>
+
+<pre>
+{return type} {function name}({arg1 type} {arg1 name}, {arg2 type} {arg2 name});
+</pre>
+
+<p>
+  For example, to declare a function that computes the distance
+  between two points on a grid, the declaration might look something
+  like
+</p>
+
+<pre>
+float distance(int x1, int y1, int x2, int y2);
+</pre>
+
+<p>
+  The actual implementation is called the function definition. While
+  declarations can be in header files or implementation files,
+  definitions must be in implementation files. The definition will
+  look exactly like the declaration, except that instead of a trailing
+  semicolon, there will be brackets containing the body of the
+  function.
+</p>
+
+<pre>
+float distance(int x1, int y1, int x2, int y2) {
+  return sqrt( (x1 - x2)^2 + (y1 - y2)^2 );
+}
+</pre>
+
+<p>
+  Note the use of the keyword <code>return</code> to return a value. As
+  soon as the <code>return</code> is reached, the function will end, regardless
+  of if there is any code still remaining.
+</p>
+
+<p>
+  Sometimes a function does not need to return a value, instead just
+  performing some task. In that case, there is the
+  keyword <code>void</code> which takes the place of the return value.
+</p>
+
+<pre>
+void sayHello(NSString *name) {
+  NSLog(@"Hello %@", name);
+}
+</pre>
+
+<section>
+  <h1>Excersizes</h1>
+ 
+  <ol>
+    <li>
+      Refactor the two guess my number and fizzbuzz excersizes from
+      the Loops page.  Use functions to make the code more readable
+      and more reusable.
+    </li>
+    <li>
+      Move the functions you created in the first excersize into separate
+      files and include them from your <code>main.m</code> file.
+    </li>
+  </ol>
+</section>
+

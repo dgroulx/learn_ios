@@ -53,72 +53,22 @@ staticVar = 2;
 
 <h2>C Built-In Types</h2>
 
-<dl>
-  <dt>
-    <code>
-      short, int, long, NSInteger
-    </code>
-  </dt>
-  <dd>
-    Represent integers. <code>short</code> holds smaller numbers
-    than <code>int</code>, which is smaller
-    than <code>long</code>. <code>NSInteger</code> is a type provided
-    by Apple that is an integer of the ideal size for the current
-    platform, be it iOS or OS X.
-  </dd>
-  <dt><code>float, double, CGFloat</code></dt>
-  <dd>
-    Decimal numbers, <code>double</code> is capable of storing higher
-    precision numbers than <code>float</code>, but uses up double the
-    storage space. CGFloat is the decimal type used by the iOS Core
-    Graphics framework.
-  </dd>
-  <dt><code>char</code></dt>
-  <dd>
-    The C type to handle a single letter. We will rarely use this as
-    we use Objective-C NSString instances instead.
-  </dd>
-  <dt>Pointer</dt>
-  <dd>
-    Pointers are variables that "point" to other variables. In
-    Objective-C, we never deal with objects directly, but instead pass
-    around pointers to them. This is why when we declare an object,
-    the variable that we store is a pointer to the object.<br>
-    <code>NSDate *today = [NSDate date];</code><br>
-    Technically we say that "today is a pointer to an NSDate,"
-    however since objects are always stored as pointers, normally
-    you will just say that "today is an NSDate."
-  </dd>
-  <dt><code>struct</code></dt>
-  <dd>
-    Structures are composite types. They allow us to group together
-    data into a more complicated concept. For example I want a type
-    Location that knows the name, latitude, and longitude of a
-    location and the number of times I had visited that place.
-    <pre>
-typedef struct {
-  float latitude;
-  float longitude;
-  int visits;
-} Location;
-    </pre>
-Elements of a struct are accessed using dot notation.
-
-<pre>
-Location theFactory;
-theFactory.latitude = 42.963107; 
-theFactory.longitude = -85.669407;
-theFactory.visits = 42;
-</pre>
-
-Structs are used frequently in iOS development. Try looking up NSRect
-in the XCode documentation.  NSRects are used to represent the
-location of a user interface element
-      </dd>
-    </dl>
+<%= partial :types %>
 
 <p>
   That's all there is. With nothing but numbers, words, and
   collections of the two, we can describe most any concept you
   want.
 </p>
+
+<section>
+  <h1>Excersizes</h1>
+
+  <ol>
+    <li>
+      Create variables of different types and try assigning them to
+      one another. What kind of compiler messages do you get?
+    </li>
+  </ol>
+</section>
+    

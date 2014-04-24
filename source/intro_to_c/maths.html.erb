@@ -2,12 +2,13 @@
 title: Maths
 ---
 
-<p>
-  C provides the usual collection of arithmetic operators, along
-  with a few shortcuts.
-</p>
-
 <h2>Arithmatic</h2>
+
+<p>
+  C provides the standard aritmetic operators '+', '-', '*', and '/'
+  which provide addition, subtraction, multiplication, and division
+  respectively. Additionaly there is the power opwerator '^'.
+</p>
 
 <h2>Shortcuts</h2>
 
@@ -22,17 +23,31 @@ int deposit = 300;
 accountTotal += deposit; // accountTotal = accountTotal + deposit
 </pre>      
 
+<p>'-=', '*=', and '/=' are also available.</p>
+
 <h2>Unary Operators</h2>
 
 <p>
   Incrementing and decrimenting a number by 1 is such a common 
   operation that there's a shortcut for it.
+</p>
 
-  <pre>
+<pre>
 int a = 5;
 --a;
 NSLog(@"%d", a); // prints 4
 int b = 6;
 ++b;
 NSLog(@"%d", b); // prints 7
-  </pre>
+</pre>
+
+<section>
+  <h1>Excersizes</h1>
+
+  <ol>
+    <li>
+      Write a program that performs some arithmatic on both decimal
+      and integer numbers. What happens when you mix the two?
+    </li>
+  </ol>
+</section>
