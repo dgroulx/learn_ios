@@ -50,12 +50,30 @@
       "title": "Intro to Object Oriented Programming",
       "dir": "intro_to_oop",
       "pages": [
-	"using_objects",
-	"our_first_obejct",
-	"properties",
-	"encapsulation",
-	"state_and_behavior",
-	"oop_summary"
+	{
+	  "name": "Using Objects",
+	  "template": "using_objects"
+	},
+	{
+	  "name": "Our First Object",
+	  "template": "our_first_obejct"
+	},
+	{
+	  "name": "Properties",
+	  "template": "properties"
+	},
+	{
+	  "name": "Encapsulation",
+	  "template": "encapsulation"
+	},
+	{
+	  "name": "State and Behavior",
+	  "template": "state_and_behavior"
+	},
+	{
+	  "name": "OOP Summary",
+	  "template": "oop_summary"
+	}
       ]
     }
   ]
