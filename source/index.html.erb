@@ -1,5 +1,115 @@
-<%= current_resource.path %>
+<h1>Introduction to iOS</h1>
 
 <ol>
-
+  <% data.sitemap.sections.each do |section| %>
+  <li><a href="<%= section[:dir] %>"><%= section[:title] %></a></li>
+  <% end %>
 </ol>
+
+<section>
+  <h1>Course Resources</h1>
+
+  <p>
+    Course discussion takes place on the <a href="https://groups.google.com/forum/#!forum/colearning-become-an-ios-developer">Google Group</a>.
+  </p>
+
+  <p>
+    Schedule: Apr 22 - July 22
+  </p>
+
+  <p>
+    Class: Every Tuesday 6pm - 8:30pm at <a href="https://www.google.com/maps/place/West+Michigan+Center+for+Arts+and+Technology/@42.963067,-85.666545,17z/data=!3m1!4b1!4m2!3m1!1s0x8819adc7214952bb:0x8910341ffe32c584">WMCAT</a>
+  </p>
+  <h2>Events</h2>
+  <ul>
+    <li>May 15 - Studio Tour (Location TBA)</li>
+    <li>June 12 - Studio Tour (Location TBA)</li>
+    <li>July 10 - Mock Interviews with Real Companies at The Factory</li>
+  </ul>
+</section>
+
+<section>
+  <h1>Additional Resources</h1>
+
+  <p>
+    Colearning is just one of many resources for you to study iOS
+    development. Here are a few other resources to get you going with
+    iOS.
+  </p>
+
+  <h2>XCode Built-in Documentation</h2>
+
+  <p>
+    XCode's built in documentation is not just an API reference, but includes
+    many articles on topics in iOS development along with example code. From
+    within XCode access the documentation from the <em>Help</em> menu, or
+    by pressing <code>Cmd + Shift + 0</code>.
+  </p>
+    
+  <h2>Books</h2>
+
+  <p>
+    For a high level overview of writing an iOS app for beginners LeanPub just
+    came out with a great ebook <a href="https://leanpub.com/your-first-ios-app">Your First iOS 7 App</a>.
+  </p>
+
+  <p>
+    The Big Nerd Ranch continues to make some of the best Apple related
+    learning materials, and they just updated both their Objective-C
+    and iOS development books for XCode5 and iOS7. These books are
+    both great for self-study and as a reference.
+  </p>
+
+  <ul>
+    <li><a href="http://www.amazon.com/Objective-C-Programming-Ranch-Guide-Guides-ebook/dp/B00GSRITM0/ref=sr_1_2?ie=UTF8&qid=1398693614&sr=8-2&keywords=big+nerd+ranch+ios">
+	Objective-C Programming</a>
+    </li>
+    <li>
+      <a href="http://www.amazon.com/iOS-Programming-Ranch-Edition-Guides/dp/0321942051/ref=sr_1_1?ie=UTF8&qid=1398693717&sr=8-1&keywords=big+nerd+ranch+ios">
+	iOS Developmeng</a>
+    </li>
+  </ul>
+
+  <h2>Websites</h2>
+
+  <ul>
+    <li>
+      <a href="http://www.raywenderlich.com">http://www.raywnderlich.com</a>
+      is one of the most comprehensive collections of iOS tutorials on the
+      internet, convering topics from very beginners to advanced.
+    </li>
+    <li>
+      <a href="http://nshipster.com">http://nshipster.com</a> is a collection
+      of articles on some of the more esoteric ideas in iOS development.
+    </li>
+  </ul>
+      
+      
+  <h2>MOOCs</h2>
+
+  <p>
+    <a href="http://teamtreehouse.com">Treehouse</a> offers several
+    online iOS courses. You can try free for a month, and get a
+    discount through colearning using these links:
+    
+    <ul>
+      <li><a href="http://trhou.se/YefnWJ">Free Month</a></li>
+      <li><a href="https://teamtreehouse.com/signup_code/thefactory2">Silver</a></li>
+      <li><a href="https://teamtreehouse.com/signup_code/thefactory">Gold</a></li>
+    </ul>
+</section>
+
+<section>
+  <h1>This Document</h1>
+  <p>
+    The source repository for this document is hosted
+    at <a href="https://github.com/dgroulx/learn_ios">https://github.com/dgroulx/learn_ios</a>. If you have anything you would like added or clarified, feel free
+    to file an issue. Pull requests are especially welcome.
+  </p>
+</section>		 
+
+  
+
+
+
+

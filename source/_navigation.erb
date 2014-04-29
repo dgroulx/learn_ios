@@ -1,9 +1,11 @@
 <% sections = data.sitemap.sections %>
-<% pages = sections.select{ |section| section[:dir] == current_resource.path.split('/').first }.first.pages %>
+<% section = sections.select{ |section| section[:dir] == current_resource.path.split('/').first }.first %>
+<% pages = section.pages %>
 <% page = pages.select{ |page| page[:template] == current_resource.path.split('/').last.gsub('.html', '') }.first %>
 <% index = pages.index(page) %>
 <% prevPage = index > 0 ? pages[index-1] : nil %>
 <% nextPage = index < pages.length ? pages[index+1] : nil %>
+
 <nav>
   <dl>
     <% if prevPage %>
@@ -14,5 +16,8 @@
     <dt>Next</dt>
     <dd><a href="<%= nextPage[:template] %>.html"><%= nextPage[:name] %></a></dd>
     <% end %>
+    <dt>Home</dt>
+    <dd><a href="index.html"><%= section.title %></a></dd>
   </dl>
+  
 </nav>

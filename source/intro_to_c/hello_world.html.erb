@@ -17,7 +17,7 @@ title: Hello World
 //  Copyright (c) 2014 David Groulx. All rights reserved.
 //
 
-@import Foundation;
+#import &lt;Foundation/Foundation.h&gt;
 
 int main(int argc, const char * argv[]) {
 
@@ -55,19 +55,13 @@ float speed; // m/s^2
   <h2>Imports</h2>
 
   <pre>
-@import Foundation;
+#import &lt;Foundation/Foundation.h&gt;;
   </pre>
 
 <p>
   C provides very little functionality by default. Instead we need to
   explicilty bring in extra libraries to do some work. Foundation is
-  an Apple library that provides the most basic function. Note
-  that <code>@import</code> is an Objective-C function, as can be seen
-  by starting with the '@' character. This is the new iOS7 way of
-  including libraries. Older codebases will use <code>#import
-  &lt;Foundation/Foundation.h&gt;</code>, however since we are
-  focusing on iOS7 and up, we will be using as many modern features as
-  we can.
+  an Apple library that provides the most basic function. 
 </p>
 
 <h2>The main() Function</h2>
@@ -98,10 +92,9 @@ int main(int argc, const char * argv[]) { ... }
 </pre>
 
 <p>
-  Again we see the '@' symbol is a feature of
-  Objective-C. @autorelease sets up Automated Reference Counting,
-  or ARC, Apple's solution for managing memory. Don't worry about
-  it too much for now.
+  The '@' symbol is a feature of Objective-C. @autorelease sets up
+  Automated Reference Counting, or ARC, Apple's solution for managing
+  memory. Don't worry about it too much for now.
 </p>
 
 <h2>Calling a Library Function</h2>

@@ -15,11 +15,26 @@ title: C Summary
   <dt>NSString</dt>
   <dd>%@</dd>
 </dl>
+
 <pre>
-NSString *name = @"Imp";
-float height = 3.43;
-int age = 4000;
-NSLog(@"I saw a %@ that was %f feet tall and %d years old", name, height, age);
+NSString *name = @"The Tempest";
+float height = 1.75;
+int age = 42;
+NSLog(@"%@ is my favorite Shakepear play", name);
+NSLog(@"You must be at least %f meteres tall to ride this ride", height);
+NSLog(@"That person over there is %i years old", age);
+</pre>
+
+<h2>Functions</h2>
+
+<pre>
+rtype functionName(type1 arg1, type2 arg2)
+</pre>
+
+<h2>Including Libraries</h2>
+<pre>
+#import &lt;math.h&gt;  // Angle brackets for accessing built-in functions
+#import "MyAwesomeUtility.h" // Quotes for accessing user functions
 </pre>
 
 <h2>Conditionals </h2>
@@ -48,18 +63,6 @@ for (initialize; test; increment) {
 }
 </pre>
 
-<h2>Functions</h2>
-
-<pre>
-rtype functionName(type1 arg1, type2 arg2)
-</pre>
-
-<h2>Including Libraries</h2>
-<pre>
-#import <math.h> // Angle brackets for accessing built-in functions
-#import "MyAwesomeUtility.h" // Quotes for accessing user functions
-</pre>
-
 <section>
   <h1>Excersizes</h1>
 
@@ -73,6 +76,10 @@ rtype functionName(type1 arg1, type2 arg2)
       Write a text-based adventure game. The player starts at a random
       location and must find the treasure. Represent the player, treasure,
       and map extent with structs. 
+    </li>
+    <li>
+      Search for a C library that performs a task you are interested in.
+      Write a small program that uses a function from that library.
     </li>
   </ol>
 </section>

@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 David Groulx. All rights reserved.
 //
 
-int getIntegerFromConsole(NSString* prompt);
+int getIntegerFromConsole();
 
-float getDecimalFromConsole(NSString* prompt);
+float getDecimalFromConsole();
 
-NSString* getStringFromConsole(NSString* prompt);
+NSString* getStringFromConsole();
 
 
 

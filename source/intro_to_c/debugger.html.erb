@@ -1,0 +1,69 @@
+--- 
+title: Stepping with the Debugger
+---
+
+<p>
+  It is really difficult to look at a few lines of code and know what
+  will happen. The good news is, we don't have to guess!  XCode comes
+  with a built in visual debugger that will let us watch the execution
+  of our programs step by step.
+</p>
+
+<p>
+  Start with the program you wrote for the format strings example that
+  print out variables of several types. On the left side of the editor
+  pane, you will see an empty grey column. Click in this column at the
+  first line of code within the <code>@autorelease</code> block. You
+  should see a dark blue arrow appear.
+</p>
+
+<img src="/images/debugger_arrow.png">
+
+<p>
+  Try running the program again, this time, instead of running to
+  completion, execution will halt at the blue arrow. At this point
+  you can use the step controls to continue exeucting the program
+  line by line. Note that the bottom left of the display now shows
+</p>
+
+<img src="/images/stepping.png">
+
+
+<p>
+  <img src="/images/continue.png">
+  Continue - Leave debugging and keep running the program
+</p>
+
+
+<p>
+  <img src="/images/step_over.png">
+  Step Over - Execute the current function and move to the next line
+</p>
+
+
+<p>
+  <img src="/images/step_into.png">
+  Step Into - Step through the current function
+</p>
+
+
+<p>
+  <img src="/images/step_out.png">
+  Step Out Of - Return back to the calling function
+</p>
+
+<section>
+  <h1>Excersizes</h1>
+
+  <ol>
+    <li>
+      Step through the basic variable printing program. Keep your eye
+      on the bottom pane. What do you see happening on the left side?
+      What is happening on the right side?
+    </li>
+  </ol>
+</section>
+
+
+
+

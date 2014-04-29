@@ -28,15 +28,32 @@ while (condition) {
 <h2>For</h2>
 
 <p>
-  <code>for</code> loops are used when a block of code should be
-  run a known number of times, or the block of code needs access
-  to the iteration variable.
+  Often we want to perform an action a known number of times. This
+  can be done with a while loop as such.
 </p>
+
 <pre>
-for (int i = 0; i < 10; ++i) {
-  // Perform this as long as i is less than 10
+int i = 0; // Initial the loop variable
+while (i < 10) { // Loop terminiation condition
+  NSLog(@"Totally doing some useful work in the loop");
+  ++i; // Increment the loop value
 }
-		    </pre>
+</pre>
+
+<p>
+  While this works, notice that the three pieces of information
+  necessary to loop are not grouped together. This can cause tricky
+  bugs. As the body of the loop gets larger and other functions are
+  called, the situation gets worse. <code>for</code> loops move these
+  three actions to the same place in your code
+</p>
+
+<pre>
+for (int i = 0; i < 10; ++i) { // Loop variable is declared, initialized, tested, 
+                               // and incremented in the same spot.
+  NSLog(@"Totally doing some useful work in the loop");
+}
+</pre>
 
 <p>
   We have access to the counting variable inside of the loop. This can be

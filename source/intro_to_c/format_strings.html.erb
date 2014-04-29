@@ -8,6 +8,7 @@ title: Format Strings
   format strings. Back in the Hello World!  program, we used NSLog
   to print out a fixed string:
 </p>
+
 <code>NSLog(@"Hello World!");</code>
 
 <p>
@@ -27,15 +28,28 @@ title: Format Strings
 </dl>
 
 <pre>
-NSString *name = @"Imp";
-float height = 3.43;
-int age = 4000;
-NSLog(@"I saw a %@ that was %f feet tall and %d years old", name, height, age);
+NSString *name = @"The Tempest";
+float height = 1.75;
+int age = 42;
+NSLog(@"%@ is my favorite Shakepear play", name);
+NSLog(@"You must be at least %f meteres tall to ride this ride", height);
+NSLog(@"That person over there is %i years old", age);
 </pre>
 
 <p>
-  Note that the variables appear in the order they are referenced
-  in the format string.
+  In each case, the token <code>%&lt;x&gt;</code> was replaced by the 
+  value of the variable. We can even insert multiple values into a single
+  format string.
+</p>
+
+<pre>
+NSLog(@"I am casting a performance of %@. I need to find an actress over %i who
+is at least %f meteres tall.", name, age, height);
+</pre>
+
+<p>
+  Notice that the variables are specified in the same order as the tokens they are
+  to replace.
 </p>
 
 <section>
@@ -46,8 +60,8 @@ NSLog(@"I saw a %@ that was %f feet tall and %d years old", name, height, age);
       Print out a variable of each type to the console.
     </li>
     <li>
-      Find out what happens when you use the incorrect string
-      token for a variable.
+      Find out what happens when you use the incorrect token for a
+      variable.
     </li>
   </ol>
 </section>

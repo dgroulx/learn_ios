@@ -8,13 +8,9 @@
 
 #import "console.h"
 
-#import <stdio.h>
-#import <stdlib.h>
-
 @import Foundation;
 
-int getIntegerFromConsole(NSString* prompt) {
-  NSLog(@"%@", prompt);
+int getIntegerFromConsole() {
   NSFileHandle *fileHandle = [NSFileHandle fileHandleWithStandardInput];
   NSData *inputData;
   NSString *inputString;
@@ -24,8 +20,7 @@ int getIntegerFromConsole(NSString* prompt) {
   return [inputString intValue];
 }
 
-float getDecimalFromConsole(NSString* prompt) {
-  NSLog(@"%@", prompt);
+float getDecimalFromConsole() {
   NSFileHandle *fileHandle = [NSFileHandle fileHandleWithStandardInput];
   NSData *inputData;
   NSString *inputString;
@@ -35,8 +30,7 @@ float getDecimalFromConsole(NSString* prompt) {
   return [inputString floatValue];
 }
 
-NSString* getStringFromConsole(NSString* prompt) {
-  NSLog(@"%@", prompt);
+NSString* getStringFromConsole() {
   NSFileHandle *fileHandle = [NSFileHandle fileHandleWithStandardInput];
   NSData *inputData;
   NSString *inputString;

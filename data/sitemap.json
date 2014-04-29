@@ -9,6 +9,10 @@
 	  "template": "intro_to_c"
 	},
 	{
+	  "name": "First Look at XCode",
+	  "template": "first_xcode"
+	},
+	{
 	  "name": "Hello World!",
 	  "template": "hello_world"
 	},
@@ -21,12 +25,20 @@
 	  "template": "format_strings"
 	},
 	{
-	  "name": "Import",
-	  "template": "import"
+	  "name": "Stepping with the Debugger",
+	  "template": "debugger"
+	},
+	{
+	  "name": "Functions",
+	  "template": "functions"
 	},
 	{
 	  "name": "Maths",
 	  "template": "maths"
+	},
+	{
+	  "name": "Import",
+	  "template": "import"
 	},
 	{
 	  "name": "If / Else",
@@ -35,10 +47,6 @@
 	{
 	  "name": "Loops",
 	  "template": "loops"
-	},
-	{
-	  "name": "Functions",
-	  "template": "functions"
 	},
 	{
 	  "name": "C Summary",
@@ -56,7 +64,7 @@
 	},
 	{
 	  "name": "Our First Object",
-	  "template": "our_first_obejct"
+	  "template": "our_first_object"
 	},
 	{
 	  "name": "Properties",
