@@ -1,0 +1,106 @@
+---
+title: NSArray
+---
+
+<p>
+  Objective-C offers arrays through the NSArray class. Like any object,
+  arrays are created with the alloc/init pattern.
+</p>
+
+<h2>Initializing Arrays</h2>
+
+<pre>
+NSArray *anArray = [[NSArray alloc] initWithObjects:obj1, obj2, nil];
+</pre>
+
+<p>
+  It is very important that the list of objects you are adding to the 
+  array ends with the 'nil' keyword. Fortunately for us, Objective-C
+  recently gained a literal syntax for arrays.
+</p>
+
+<pre>
+NSArray *lengthTwoArray = @[obj1, obj2];
+</pre>
+
+<p>
+  We can send messages to this array like any other object.
+</p>
+
+<pre>
+int length = [lengthTwoArray count];
+</pre>
+
+
+<h2>Accessing Arrays</h2>
+
+<p>
+  Individual elements are accessed from the array by their index.
+</p>
+
+<pre>
+id obj1 = [lengthTwoArray objectAtIndex:0];
+id obj2 = [lengthTwoArray objectAtIndex:1];
+</pre>
+
+<p>
+  This works but is verbose, in modern Objective-C we
+  can access array elements the same as most other languages.
+<p>
+
+<pre>
+id obj1 = lengthTwoArray[0];
+id obj2 = lengthTwoArray[1];
+</pre>
+
+<h2>Looping Over Arrays</h2>
+
+<p>
+  Often we want to perform some action on every element of
+  an array, for example printing the element out. Using the
+  array access notiation and the for loop from the Intro
+  to C section, this can be done as such:
+</p>
+
+<pre>
+NSArray *array = @[@"Penut", @"Butter", "Sandwich"];
+for (int i = 0; i < [array count]; ++i) {
+  NSLog(@"%@", array[i]); 
+}
+</pre>
+
+<p>
+  Notice using the length of the array to limit the number of times
+  the loop runs. This is an extra bit of work that is repetitious
+  and error prone. There is another form of looping over arrays
+  we can use.
+</p>
+
+<pre>
+NSArray *array = @[@"Penut", @"Butter", "Sandwich"];
+for (NSString *word in array) {
+  NSLog(@"%@", word);
+}
+</pre>
+
+<h2>Mutable Arrays</h2>
+
+<p>
+  By default, arrays in Objective-C are immutable. While this may
+  seems like a hassle, knowing that a value we set could not have
+  been altered by any other code can prevent large families of
+  errors. However often you will want to update arrays. For this,
+  there is NSMutableArray, a subclass of NSArray.
+</p>
+
+<section>
+  <h1>Excersizes</h1>
+
+  <ol>
+    <li>
+      Write a program that loops over an array of strings and
+      builds a new array of a capitlized version of those strings.
+    </li>
+  </ol>
+</section>
+

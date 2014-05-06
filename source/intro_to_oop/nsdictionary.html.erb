@@ -1,0 +1,80 @@
+---
+title: NSDictionary
+---
+
+<p>
+  Dictionaries are another common generic datastructure supported in
+  programming languages. They also go by the name of hash, associative
+  array, and are very similar to objects in Javascript.
+</p>
+
+<h2>Initializing Dictionaries</h2>
+
+<pre>
+NSDictionary *aDictionary = [[NSDictionary alloc] 
+  initWithObjectsAndKeys:@"value1", @"key1", @"value2", @"key2", nil];
+</pre>
+
+<p>
+  Like arrays, there is now a convinient literal syntax for
+  initializing dictionaries.
+</p>
+
+<pre>
+NSDictionary *easyDict = @{ @"key1" : @"value1", @"key2" : @"value2" };
+</pre>
+
+<h2>Accessing Dictionaries</h2>
+
+<p>
+  Where arrays were accessed by a numeric index, dictionaries are
+  accessed by the name of the key.
+</p>
+
+<pre>
+id name = [aDictionary objectForKey:@"name"];
+</pre>
+
+<p>
+  Again there is a more convinient literal syntax.
+</p>
+
+<pre>
+id name = aDictionary[@"name"];
+</pre>
+                           
+<h2>Looping Over Dictionaries</h2>
+
+<p>
+  Looping through a dictionary yields the keys. We can use the keys
+  to access the values as well.
+</p>
+
+<pre>
+NSDictonary *aPerson = @{ @"name" : "Alice", @"location" : "Grand Rapids" };
+for (NSString *key in aPerson) {
+  NSLog(@"%@ : %@", key, aPerson[key] );
+}
+</pre>
+
+<h2>Mutable Dictionaries</h2>
+
+<p>
+  Just like the NSArray and NSMutableArray pair, NSDictionary has a
+  subclass NSMutableDictionary. Checkout the documentation for
+  NSMutableDictionary to see what you can do.
+</p>
+
+<section>
+  <h1>Excersizes</h1>
+
+  <ol>
+    <li>
+      Write a function that prints out a person's record. To represent
+      a person, use an NSDictionary to store their first name, last
+      name, and age. Test out this function with two different person
+      objects.
+    </li>
+  </ol>
+</section>
+

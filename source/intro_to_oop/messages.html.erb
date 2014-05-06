@@ -1,0 +1,101 @@
+---
+title: Messages
+---
+
+<p>
+  Our Person objects aren't really people yet. We need to be able 
+  to send messages to those objects. Again mirroring functions,
+  messages are declared in the header and implemented in the
+  implementation file. 
+</p>
+
+<pre>
+#import &lt;Foundation/Foundation.h&gt;
+
+@interface SBSPerson : NSObject
+
+- (NSString *)name;
+
+@end
+</pre>
+
+<p>
+  This declares a message 'name'. The '-' at the beginning means that
+  this is an instance message. The type in parenthesis is the return type.
+  The rest is the name of the message. The implementation uses the same
+  syntax.
+</p>
+
+<pre>
+#import "Person.h"
+
+@implementation Person
+
+- (NSString *)name {
+  return @"Alice Adams";
+}
+
+@end
+</pre>
+
+<p>
+  Now we can get the Person's name. However, every person has the same name.
+  Next we add instnace variables to the class. Each instance of the class
+  will have it's own copy of these instance variables. Update the implementation
+  file to look like this:
+</p>
+
+<pre>
+#import "Person.h"
+
+@interface Person () {
+  NSString *_firstName;
+  NSString *_lastName;
+}
+@end
+
+@implementation Person
+
+- (instancetype)initWithFirstName:(NSString *)firstName lastName:(NSString *)lastName {
+  
+  self = [super init];
+  if (self) {
+    _firstName = firstName;
+    _lastName = lastName;
+  }
+  
+  return self;
+}
+
+- (NSString *)name {
+  return [NSString stringWithFormat:@"%@ %@", _firstName, _lastName];
+}
+
+@end
+</pre>
+
+<p>
+  Here we have made a new init function that is responsible for setting
+  the variables, and the name message is now dynamic.
+</p>
+
+<section>
+  <h1>Excersizes</h1>
+
+  <ol>
+    <li>
+      When printing out objects with NSLog, the string representation of the
+      object comes from calling the description message. Implement a method
+      description that returns an NSString. Write a program that prints out
+      people.
+    </li>
+  </ol>
+</section>
+
+
+
+
+
+
+
+

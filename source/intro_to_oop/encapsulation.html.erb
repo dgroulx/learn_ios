@@ -1,3 +1,48 @@
 ---
 title: Encapsulation
 ---
+
+<p>
+  We now know enough of the mechanics of object oriented programming
+  to start writing iOS applications. This and the next section instead
+  try to delve a little into the why of OOP and get you thinking about
+  OOP approaches to problem solving.
+</p>
+
+<p>
+  One of the keystones of OOP design is seperating the interface of an
+  object, or the methods we use to interact with it, from the
+  implementation, the data representation of the object. Follow along
+  the steps and see the problem.
+</p>
+
+<h2>Encapsulating Points</h2>
+
+<ul>
+  <li>
+    Make a class Point that represents a (x,y) coordinate. This class
+    has a very simple interface, only a way to get and set data.
+  </li>
+  <li>
+    Write a function <code>float distance(Point x1, Point x2)</code>
+    that computes the distance between two points.
+  </li>
+  <li>
+    Now imagine some technology comes along that is highly efficient
+    at storing points in polar coordinates. Change the member variables
+    from (x,y) to (r,theta). For reference, the conversion formulas are
+    <code>x = r * cos(theta); y = r * sin(theta)</code>.
+  </li>
+  <li>
+    Write methods that implement the (x,y) properties refering to
+    the new (r,theta) properties.
+  </li>
+</ul>
+
+<p>
+  In this case, we say that the object has encapsulated the data.
+  This separation of interface and implementation has made our code
+  safe from future changes. 
+</p>
+
+

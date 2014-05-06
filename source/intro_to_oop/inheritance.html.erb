@@ -1,0 +1,104 @@
+---
+title: Inheritance
+---
+
+<p>
+  We've already seen an example of inheritance. NSMutableArray was
+  inherited from NSArray, and NSMutableDictionary was inherited from
+  NSDictionary.  Inheritance allows for extending the functionality of
+  other classes and redefining their behavior.
+</p>
+
+<h2>Extend Functionality</h2>
+
+<p>
+  Say we make an employee database. We want a class to represent employees.
+  As it happens, Employee's are people too. We create an employee class 
+  and inherit from the Person class we've been working on.
+</p>
+
+<pre>
+// Employee.h
+#import "Person.h"
+
+@interface Employee : Person {
+
+}
+
+@property NSString *jobTitle;
+
+@end
+</pre>
+
+<pre>
+// Employee.m
+@interface Employee () {
+
+}
+@end
+
+@implementation Employee {
+
+}
+@end
+</pre>
+
+<p>
+  And now we have an employee class. Try it out.
+</p>
+
+<pre>
+// Employee has access to the same initializer
+Employee *helpDesk = [[Employee alloc] initWithFirstName:@"Roy" lastName:@"Trenneman"];
+helpDesk.jobTitle = @"Help Desk";
+NSLog(@"%@", [helpDesk name]); // Prints out "Roy Trenneman"
+</pre>
+
+<h2>Redfine Behavior</h2>
+
+<p>
+  There's a problem with our Employee class. When we print out the name, it'd
+  be nice if we saw their job title too. This is an easy fix. If you define a
+  message in a subclass, it will overwrite the method from the superclass.
+</p>
+
+<pre>
+// Employee.m
+@interface Employee () {
+
+}
+@end
+
+@implementation Employee
+
+- (NSString *)name {
+  return [NSString stringWithFormat:@"%@, %@", [super name], self.jobTitle];
+}
+
+@end
+</pre>
+
+<p>
+  Two little details popped up here. First, the <code>super</code> keyword.
+  We've seen it before in the init method. <code>super</code> calls a 
+  method implementation from the parent class.
+</p>
+
+<p>
+  The second is the <code>self</code> keyword. This is how an object refers
+  to itself. We access the property jobTitle through <code>self</code>.
+</p>
+
+<section>
+  <h1>Excersizes</h1>
+
+  <ol>
+    <li>
+      A contractor is a type of employee that has a custom rate. Make a class
+      Contractor that is a subclass of Employee. Give it a property hourlyRate
+      and a message that takes a number of hours as an argument and returns
+      now much they are owed.
+    </li>
+  </ol>
+</section>
+

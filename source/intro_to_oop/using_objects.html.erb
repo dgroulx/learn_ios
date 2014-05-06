@@ -1,0 +1,58 @@
+---
+title: Using Objects
+---
+
+<h2>Why Objects?</h2>
+
+<p>
+  When studying C, we learned how to use functions to better organize
+  programs and enable code reuse. Now think about all the parts of an
+  iPhone app. There are visible things like buttons, text fields,
+  gestures, animations, as well as more abstract concepts like
+  controllers, notifications, data sources. We could use the variables
+  and functions we have to keep track of all this information, but the
+  situation will get confusing quick. Object oriented programing was
+  devised to address this explosion of complexity.
+</p>
+
+<p>
+  OOP introduces some new vocabulary. Don't worry about memorizing
+  these terms, just be aware of them as you read through this section.
+</p>
+
+<dl>
+  <dd>Class</dd>
+  <dt>
+    The new "type" of thing. Think of it as a blueprint for creating
+    objects.
+  </dt>
+  <dd>Object</dd>
+  <dt>
+    The actual variable of the type Class. 
+  </dt>
+  <dd>Instance</dd>
+  <dt>
+    Synonym for object. Usually used when refering to an an object's
+    class. For example given the code<br>
+    <code>NSString *name = @"Steve";</code><br> you would say "The
+    object name is an instance of the NSString class".
+  </dt>
+  </dt>
+  <dd>Class Method</dd>
+  <dt>
+    Class methods are methods that apply to the entire class. For
+    example, there is a method on the NSString class that will return
+    all available string encodings.
+  </dt>
+  <dd>Instance Method</dd>
+  <dt>
+    Instance methods apply to individual objects.
+  </dt>
+  <dd>Inheritance</dd>
+  <dt>
+    A class can inherit from another class. This is a method of
+    resuing code. The inherited class has all the functionality of the
+    parent class and can act as that class, but also extends
+    functionality, and can customize functionality as well.
+  </dt>
+</dl>

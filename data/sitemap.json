@@ -63,20 +63,36 @@
 	  "template": "using_objects"
 	},
 	{
+	  "name": "NSString",
+	  "template": "nsstring"
+	},
+	{
+	  "name": "NSArray",
+	  "template": "nsarray"
+	},
+	{
+	  "name": "NSDictionary",
+	  "template": "nsdictionary"
+	},
+	{
 	  "name": "Our First Object",
 	  "template": "our_first_object"
+	},
+	{
+	  "name": "Messages",
+	  "template": "messages"
 	},
 	{
 	  "name": "Properties",
 	  "template": "properties"
 	},
 	{
-	  "name": "Encapsulation",
-	  "template": "encapsulation"
+	  "name": "Inheritance",
+	  "template": "inheritance"
 	},
 	{
-	  "name": "State and Behavior",
-	  "template": "state_and_behavior"
+	  "name": "Encapsulation",
+	  "template": "encapsulation"
 	},
 	{
 	  "name": "OOP Summary",

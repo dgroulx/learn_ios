@@ -1,0 +1,110 @@
+---
+title: NSString
+---
+
+<p>
+  We've been using objects already. Last week we used variables of
+  the type NSString* to deal with text. NSString is actually a
+  class. Strings were created with the syntax
+</p>
+
+<pre>
+NSString *aString = @"I'm really an object";
+</pre>
+
+<p>
+  This is refered to as <strong>literal syntax</strong>. NSStrings can
+be created with contructors just like any other object.
+</p>
+
+<pre>
+NSString *aString = [[NSString alloc] init];
+</pre>
+
+<p>
+  A few new things in this line. First, we see Objective-Cs
+  bracket synax. Square brackets are used to "send a message"
+  to an object. While there are some subtle differences between
+  messages and methods, you can think of this as calling an
+  instance method for now. 
+</p>
+
+<p>
+  The second thing you are seeing then is Objective-C's two
+  phase object initialization. Where most languages have a single
+  constructor function, Objective-C breaks it into two parts
+  for historical reasons. Just know the alloc init pattern is 
+  common.
+</p>
+
+<p>
+  To create a new string and give it an initial value, you could
+  write
+</p>
+<pre>
+NSString *aString = [NSString alloc] initWithUTF8String:"I'm really an object"];
+</pre>
+<p>
+  In this case we are sending an argument to the message, which is
+  specified by the ':' character.
+</p>
+
+<h2>String Comparisons</h2>
+
+<p>
+  Try comparing two strings.
+</p>
+<pre>
+NSString *first = @"batman";
+NSString *second = @"batman";
+if (first == second) {
+  NSLog(@"strings are equal");
+} else {
+  NSLog(@"unequal strings");
+}
+</pre>
+
+<p>
+  The problem here is that the variables first and second are not
+  strings, but pointers to strings. Fortunately there is an instance
+  method to compare strings.
+</p>
+
+<pre>
+NSString *first = @"batman";
+NSString *second = @"batman";
+if ([first isEqualToString:second]) {
+  NSLog(@"strings are equal");
+} else {
+  NSLog(@"unequal strings");
+}
+</pre>
+
+<p>
+  Here's the second bit of new syntax, the ':' in the message send.
+  Unlike functions which separate their arguments with commas, message
+  arguments are specified with colons. This can be verbose to type,
+  but leads to highly readable code.
+</p>
+  
+<section>
+  <h1>Excersizes</h1>
+
+  <p>
+    For these excersizes you will need to look up some functionality
+    in the documentation.
+  </p>
+  <ol>
+    <li>
+      Write a program that asks the user for two strings, then prints
+      them in alphabetical order. Note that the string compare
+      function returns an NSComparisonResult type that you can use to
+      interpret the result.
+    </li>
+    <li>
+      Write a program that asks for a first name and last name, then
+      prints a string in the form "LAST, FIRST".
+    </li>
+  </ol>
+</section>
+

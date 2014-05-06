@@ -1,0 +1,91 @@
+---
+name: Properties
+---
+
+<h2>Variable Mutation via Messaging</h2>
+
+<p>
+  We have created what is in effect a non-mutable person. But names
+  change. Lets let users change the names of an existing class.
+</p>
+
+<pre>
+- (NSString *)firstName {
+  return _firstName;
+}
+
+- (void)setFirstName:(NSString *)firstName {
+  _firstName = firstName;
+}
+
+- (NSString *)lastName {
+  return _lastName;
+}
+
+- (void)setLastName:(NSString *)lastName {
+  _lastName = lastName;
+}
+</pre>
+
+<p>
+  We can now update and access instance variables.
+</p>
+
+<pre>
+Person *alice = [Person alloc] initWithFirstName:@"Alice" lastName: @"Stevens"];
+NSLog(@"%@", [alice lastName]); // prints out "Stevens"
+[alice setLastName:@"Rogers"];
+NSLog(@"%@", [alice lastName]); // prints out "Rogers"
+</pre>
+
+<h2>Properties</h2>
+
+<p>
+  Most other languages allow access to member variables via a dot notation.
+  Objective-C supports this notation through properties. Properties are
+  specified in the header files.
+</p>
+
+<pre>
+@property NSString *firstName;
+@property NSString *lastName;
+</pre>
+
+<p>
+  Note that the property name does not have the underscore. Now
+  we can access and set names via properties.
+</p>
+
+<pre>
+Person *alice = [Person alloc] initWithFirstName:@"Alice" lastName: @"Stevens"];
+NSLog(@"%@", alice.lastName]); // prints out "Stevens"
+alice.lastName = @"Rogers";
+NSLog(@"%@", alice.lastName); // prints out "Rogers"
+</pre>
+
+<p>
+  The magic <code>@property</code> keyword does more than just enable
+  handy dot notation. It actually generates the getter and setter code
+  for us, along with the backing varibles. Try deleting the four
+  accessor methods and instance variable declarations and see if
+  your code still runs.
+</p>
+
+<section>
+  <h1>Excersizes</h1>
+
+  <ol>
+    <li>
+      Add a property to Person. Write a program that access this property.
+    </li>
+    <li>
+      Properties should have sane defaults. The default value of an NSString
+      is @"". Instead, edit the init message to assign a value to the property
+      you added.
+  </ol>
+</section>
+
+
+
+
+
