@@ -1,0 +1,78 @@
+--- 
+title: Minimum Viable App 
+---
+
+<p>
+  For the past two classes we've been starting projects based on the OS X
+  Command Line Tool template. Today, we're switching over to the iOS Empty
+  Application template. Create a new project. Run this project to make sure
+  that your iOS simulator is working properly. Now lets go through the contents
+  of the template project.
+</p>
+
+<img src="/images/empty_ios_template.png">
+
+<p>
+  Hidden away in the Supporting Files group is <code>main.m</code>. Note the
+  Note the main() function and @autoreleasepool {...} block. Unlike command
+  line applications that run from start to end based on what the code tells
+  the program to do, iOS applictions start up what is called a run loop.
+  The application sits around and waits for user input, then responds to it.
+  The UIApplicationMain function is what starts this loop. You will never
+  need to touch the main.m file, instead all of your app code will get
+  called by the run loop in response to user and system events.
+</p>
+<pre>
+// main.m
+#import <UIKit/UIKit.h>
+
+#import "SBSAppDelegate.h"
+
+int main(int argc, char * argv[])
+{
+  @autoreleasepool {
+      return UIApplicationMain(argc, argv, nil, NSStringFromClass([SBSAppDelegate class]));
+  }
+}
+</pre>
+
+<p>
+  Next is the AppDelegate class. Delegates are an example of object
+  composition. We can customize the response of the Application to a
+  set of events by implementing methods in the AppDelegate class. By
+  default only the application:didFinishLaunchingWithOptions: message
+  has an implementation. This is where we specify the application's
+  user interface.
+</p>
+
+<pre>
+// AppDelegate.h
+#import <UIKit/UIKit.h>
+
+@interface SBSAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
+
+@end
+</pre>
+
+<pre>
+// AppDelegate.m
+#import "SBSAppDelegate.h"
+
+@implementation SBSAppDelegate
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    return YES;
+}
+
+- (void)applicationWillResignActive:(UIApplication *)application
+{
+...
+@end
+</pre>

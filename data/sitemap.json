@@ -1,6 +1,16 @@
 {
   "sections": [
     {
+      "title": "Github",
+      "dir": "github",
+      "pages": [
+	{
+	  "name": "Using Github with XCode",
+	  "template": "github_xcode"
+	}
+      ]
+    },
+    {
       "title": "Intro to C",
       "dir": "intro_to_c",
       "pages": [
@@ -37,7 +47,7 @@
 	  "template": "maths"
 	},
 	{
-	  "name": "Import",
+	  	  "name": "Import",
 	  "template": "import"
 	},
 	{
@@ -99,6 +109,32 @@
 	  "template": "oop_summary"
 	}
       ]
+    },
+    {
+      "title": "iOS Views",
+      "dir": "views",
+      "pages": [
+	{
+	  "name": "Minimum Viable App",
+	  "template": "mva"
+	},
+	{
+	  "name": "Model View Controller Archetecture",
+	  "template": "mvc"
+	},
+	{
+	  "name": "Creating a View Controller",
+	  "template": "creating_view_controller"
+	},
+	{
+	  "name": "Quiz Game",
+	  "template": "quiz_game"
+	},
+	{
+	  "name": "Text Input",
+	  "template": "text_input"
+	}
+      ]
     }
-  ]
+  ] // sections
 }

@@ -1,0 +1,13 @@
+<h1>iOS Views</h1>
+
+<% section = data.sitemap.sections.select{ |section| section[:dir] == current_resource.path.split('/').first }.first %>
+
+<ol>
+  <% section[:pages].each do |page| %>
+  <li><a href="/<%= section[:dir] %>/<%= page[:template] %>.html"><%= page[:name] %></a></li>
+  <% end %>
+</ol>
+
+<h2>Files</h2>
+
+<a href="Quiz.zip">Quiz.zip</a>

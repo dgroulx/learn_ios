@@ -1,0 +1,33 @@
+--- 
+title: Text Input 
+---
+
+<p> 
+  It's nice that we can get the answers from the text game, but it'd
+  be nice if it would let us guess. Lets add text input to the game.
+  In XCode, view the XIB file. In the inspector, click Enabled for the
+  answer UITextField. Rerun the program and see what happens.  </p>
+
+<h2>Delegation</h2>
+
+<p> 
+  When you click on the UITextField, a keyboard pops up now. However,
+  the keyboard won't go away when you press return. Lets fix that.
+  UITextFields don't know what to do when you hit the enter button.
+  They use delegation for this.  </p>
+
+<h2>Protocols</h2>
+
+<p>
+  In order for delegation to work, delegates are expected to respond
+  to a set of messages. In the example of the UITextField, we
+  need to respond to the textFieldShouldReturn:. One way to make sure
+  that an object responds to a set of methods is to inherit from a class
+  that implements those methods. However, we have already inherited
+  from UIViewController. The other way is to say that a class implements
+  a protocol. A protocol is a collection of methods. In this case,
+  we want our custom view controller class to conform to the UITextFieldDelegate
+  protocol.
+</p>
+
+

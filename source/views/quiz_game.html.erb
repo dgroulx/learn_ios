@@ -1,0 +1,179 @@
+---
+title: Quiz Game
+---
+
+<section>
+  <h1>The App</h1>
+  <p>
+    Now that we have a view controller and a xib to represent
+    the view, lets write a demo application. This application
+    will present the user with a quiz question. The user can
+    then press a button to see the answer, or they can
+    press a different button to get a new question.
+  </p>
+</section>
+
+<section>
+  <h1>Create the UI</h1>
+  <p>
+    This is the fun part! All you have to do is drag labels,
+    text areas, and buttons over to the view and arrange them
+    as you want. For the UITextFields, make sure that you
+    disable them. For the first version of this application,
+    the user is unable to interact with the text fields.
+  </p>
+</section>
+
+<section>
+  <h1>Present the UI to the User</h1>
+  <p>
+    Now that you've designed your UI, run the application and...
+    nothing happens. In fact, in XCode down in the debug area you
+    should get the message <code>Application windows are expected to have a root view controller at the end of application launch</code>. We
+    created our own view controller, but we haven't told the
+    application to use it yet. This is done in the App delegates
+    application:didFinishLaunchingWithOptions: delegate method. Edit this
+    method to look like this:
+
+<pre>
+#import "QuizViewController.h" // Do this at the top of the file
+
+...
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  
+  QuizViewController* quizVC = [[QuizViewController alloc] init];
+  self.window.rootViewController = quizVC;
+  self.window.backgroundColor = [UIColor whiteColor];
+  [self.window makeKeyAndVisible];
+  return YES;
+}
+</pre>
+</section>
+
+<section>
+  <h1>The Model</h1>
+  <p>
+    Here we have a collection of quiz questions, which are question
+    answer pairs.  Lets keep this simple for now and use the
+    foundation NSArray and NSDictionary classes. A quiz question is
+    represnted as a NSDictionary with the keys @"question" and
+    @"answer". The controller keeps an NSArray of questions to select
+    from. Add an NSArray as a member variable to the controller:
+  </p>
+  <pre>
+@interface QuizViewController () {
+  NSArray *questions;
+  NSDictionary *currentQuestion;
+}
+@end
+  </pre>
+  <p>
+    For now we can hard-code in some questions. Since we want this setup
+    when the view controller is created, add this to the init method.
+  </p>
+  <pre>
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+  if (self) {
+    NSDictionary *q1 = @{@"question": @"What is 5 + 2?", @"answer": @""};
+    NSDictionary *q2 = @{@"question": @"What is the capitol of South Dakota?", @"answer": @"Pierre"};
+    NSDictionary *q3 = @{@"question": @"How are you feeling today?", @"answer": @"Fine"};
+    questions = @[q1, q2, q3];
+  }
+  return self;
+}
+  </pre>
+</section>
+
+<section>
+  <h1>Wire Up the Outlets and Actions</h1>
+  <p>
+    Now the user can see our UI, but nothing is happening. Lets use
+    the target/action pattern to enable the application to respond to
+    the user. First, since we will be updating the contents of the
+    text fields, the controller needs a way to reach them. We do this
+    with outlets. Outlets are properties whose values are objects that
+    represent interface elements. We have two outlets, one for the
+    question UITextField, and one for the answer UITextField.
+  </p>
+  <pre>
+@interface QuizViewController : UIViewController
+
+@property (weak) IBOutlet UITextField *question;
+@property (weak) IBOutlet UITextField *answer;
+
+@end
+  </pre>
+
+  <p>
+    Notice that there are little circles to the right of the outlet declarations.
+    This is a hint that you can connect UI elements to these outlets. In the
+    Project Navigator, select the XIB file. The yellow cube on the left of the
+    editor represents the view controller where we just created the outlets. Hold
+    down right click and drag from the yellow cube to the question UITextField. Now
+    you will see a list of outlets that this object can be assigned to. Choose question.
+    Repeat this process for the answer UITextField. When the XIB file is loaded, these
+    values will get set. Now the code we write inside of the view controller has
+    access to these fields.
+  </p>
+
+  <p>
+    Next, lets write some messages for the buttons to send to the
+    controller when pressed. There will be a message to generate a new
+    question, and message to present the answer. Messages are just
+    class methods with the type IBAction.
+  </p>
+  <pre>
+// QuizViewController.h
+- (IBAction)tellMeTheAnswer:(id)sender;
+- (IBAction)nextQuestion:(id)sender;
+
+// QuizViewController.m
+- (IBAction)tellMeTheAnswer:(id)sender {
+  // Update the user interface based on the state of the system.
+  self.answer.text = currentQuestion[@"answer"];
+}
+
+- (IBAction)nextQuestion:(id)sender {
+  int currentQuestionIndex = [questions indexOfObject:currentQuestion];
+  int nextQuestionIndex = -1; // start with an invalid array index
+  
+  // Keep guessing random numbers to lookup a new question, but make
+  // sure that we don't repeat the same question.
+  do {
+    nextQuestionIndex = arc4random_uniform([questions count]);
+  } while (nextQuestionIndex == currentQuestionIndex);
+  // Update the data model
+  currentQuestion = questions[nextQuestionIndex];
+  
+  // Update the UI to reflect the new model
+  self.question.text = currentQuestion[@"question"];
+  self.answer.text = @"";
+}
+  </pre>
+</section>
+
+<section>
+  <h1>Summary</h1>
+  <p>
+    Here we wrote a simple application using the MVC pattern. We implemented
+    an event-based programming style by using both delegates and the target/action
+    pattern.
+  </p>
+</section>
+
+<section>
+  <h1>Exercises</h1>
+
+  <ol>
+    <li>
+      Play with the various property settings to customize the UI. Try
+      change colors, fonts, sizes, etc.
+    </li>
+  </ol>
+</section>
+

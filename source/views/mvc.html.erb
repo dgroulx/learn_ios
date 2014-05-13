@@ -1,0 +1,85 @@
+---
+title: Model View Controller Archetecture
+---
+
+<p>
+  iOS applications all fit into the same overall pattern of MVC, or
+  model-view-controller.  The this pattern is conceptually similar to
+  that of HTML and CSS. We want to separate an application's data from
+  how it is represented. This allows for the user interface to change
+  rapidly, and for the data model to be reused througout the
+  application.  Controllers mediate between views and models and
+  contain much of the logic that describes the flow of user
+  interaction through the application.
+</p>
+
+<p>
+  <strong>NOTE: </strong>Many people have experience with MVC web
+  application frameworks. If you do, I recomend forgetting everything
+  you know about MVC. Despite having the same names and same
+  components, what each role does is subtly different.
+</p>
+
+<img src="/images/mvc.png">
+
+<section>
+  <h1>Views</h1>
+  <p>
+    Views represent any component that is visible on the
+    screen. Specificlly, a view is an instance of UIView or a UIView
+    subclass. Views are responsible for drawing their data onto the
+    screen. Additionally, since UIView is a subclass of UIResponder,
+    views are also responsible for responding to user interaction such
+    as touches. Examples are buttons, text boxes, labels, spinners,
+    etc.
+  </p>
+</section>
+
+<section>
+  <h1>Model</h1>
+  <p>
+    Models are were most of your custom application code goes. They
+    can represent both data and processes in your
+    application. Frequently NSArray and NSDictionary are used. For
+    more complicated data, you can wrap NSArray and NSDictionary in
+    your own classes or just store everything in your own class
+    properties. iOS comes with a framework for designing and
+    persisting your applications data called CoreData. CoreData is
+    probably outside the scope of this class, but it is an interesting
+    tool to look at and use where appropriate.
+  </p>
+</section>
+
+<section>
+  <h1>View Controller</h1>
+  <p>
+    View controllers sit between the views that make up your user
+    interface and the data model of your application. They are
+    responsible for presenting the view to the application and
+    transition to other views as the user moves through your
+    application. 
+  </p>
+</section>
+
+<section>
+  <h1>Event-based Programming</h1>
+  <p>
+    Unlike the command line appications we wrote in C, iOS programming
+    is event based. This means that your program sits there waiting
+    for the user to perform an action, then is notified by the
+    application that an action was performed, and responds. This model
+    should feel familiar to web developers. Instead of coding an
+    algorith, we are really writing out a list of methods to respond
+    to user interaction.
+  </p>
+  <ul>
+      <li>Delegation - specify an object that responds to a list of event
+      methods, see UIApplicationDelegate</li>
+      <li>Target/Action - Link a view's event to a method in another object</li>
+      <li>Notifications - Classes can throw messages and listen for messages</li>
+      <li>Blocks and Callbacks - Use Objective-C blocks to specify methods that will
+      be called when an event occurs in the future.</li>
+    </ul>
+</section>
+
+
