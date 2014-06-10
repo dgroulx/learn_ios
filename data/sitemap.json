@@ -5,8 +5,8 @@
       "dir": "github",
       "pages": [
 	{
-	  "name": "Using Github with XCode",
-	  "template": "github_xcode"
+	  "name": "Colearning Accounts",
+	  "template": "colearning_accounts"
 	}
       ]
     },
@@ -131,10 +131,37 @@
 	  "template": "quiz_game"
 	},
 	{
-	  "name": "Text Input",
+	  "name": "Text Input and Delegation",
 	  "template": "text_input"
+	},
+	{
+	  "name": "Dynamic Table Views",
+	  "template": "dynamic_table_views"
 	}
       ]
+    },
+    {
+      "title": "More View Controllers",
+      "dir": "more_view_controllers",
+      "pages": [
+	{
+	  "name": "Tab Views",
+	  "template": "tab_views"
+	},
+	{
+	  "name": "Navigation Views",
+	  "template": "navigation_views"
+	},
+	{
+	  "name": "Navigating with Table Views",
+	  "template": "nav_with_tables"
+	}
+      ]
+    },
+    {
+      "title": "Grab Bag",
+      "dir": "grabbag",
+      "pages": []
     }
   ] // sections
 }

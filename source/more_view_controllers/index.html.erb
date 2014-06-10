@@ -1,0 +1,9 @@
+<h1>More View Controllers</h1>
+
+<% section = data.sitemap.sections.select{ |section| section[:dir] == current_resource.path.split('/').first }.first %>
+
+<ol>
+  <% section[:pages].each do |page| %>
+  <li><a href="/<%= section[:dir] %>/<%= page[:template] %>.html"><%= page[:name] %></a></li>
+  <% end %>
+</ol>

@@ -1,0 +1,41 @@
+---
+title: Tab Views
+---
+
+<img src="/images/clock_tab_bar.png">
+
+<p>
+  A common, easy way to implement multiple views in iOS apps are via
+  the tab bar. The behavior is pretty simple, click on the tab button,
+  present a new independant view.
+</p>
+
+<h2>Storyboards</h2>
+
+<p>
+  So far we have been using XIB files to visually design our user interfaces.
+  Unfortunately, the XIB editor does not support visually editing tab
+  views. For this we will need to use storyboards. Storyboards let
+  you layout the entire application flow in a single file. Lets create
+  a storyboard based project to show off tab views.
+</p>
+
+<ol>
+  <li>Create a new Empty Application project in XCode.</li>
+  <li>
+    Create a new storyboard. To tell the application to use the
+    storyboard to set the root view controller, click on the project
+    in the Project Navigator. In the interface, where it says "Main
+    Interface" select the storyboard. Next, go to the AppDelegate
+    implemenation file. In the
+    application:didFinishLaunchingWithOptions: method, remove the manual
+    creation of a window. The storyboard will handle this setup.
+  </li>
+</ol>
+<pre>
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    return YES;
+}
+</pre>
+
+

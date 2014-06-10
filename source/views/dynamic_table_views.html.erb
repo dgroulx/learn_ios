@@ -1,0 +1,101 @@
+---
+title: Dynamic Table Views
+---
+
+<p>
+  Viewing tabular data is one of the most common activities
+  computers are used for, so iOS has built in classes for
+  handling them.
+</p>
+
+<img src="/images/twitter_table.png">
+
+<section>
+  <h1>Demo App</h1>
+
+  <h2>Initial Setup</h2>
+  <ol>
+    <li>
+      The UITableView class is a MVC view that represents a table. True
+      to the MVC pattern, this class only deals with the visual presentation
+      of data. The behavior and data are defined elsewhere. The behavior
+      is defined by an object that conforms to the UITableViewDelegate,
+      and the data is provided by an object that conforms to the
+      UITableViewDataSource protocol. If you look at UITableViewController
+      in the documentation, you will see that it already conforms to
+      both protocols.
+
+    </li>
+
+    <li>
+      Make a new project in XCode. Use the Empty Application template.
+      Create a new Objective-C class called StaticTableViewController
+      that is a subclass of <em>UITableViewController</em>. Don't forget
+      to check the "Create XIB" box as well. 
+    </li>
+
+    <li>
+      Notice that the XIB has already been populated for us with a 
+      table view. Click on the table view, then look at the connections
+      tab on the far right of xcode. You can see that the UITableView
+      has outlets for dataSource and delegate, and that those have already 
+      been set to the File's Owner.
+    </li>
+  </ol>
+
+  <h2>DataSource</h2>
+  
+  <p>
+    Run the program and you will see a blank view. We need to fill out
+    the data source methods to provide some information.
+  </p>
+
+  <pre>
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  // Return the number of rows in the section.
+  return [questions count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                 reuseIdentifier:@"UITableViewCell"];
+  
+  NSDictionary *question = questions[indexPath.row];
+  cell.textLabel.text = question[@"question"];
+  return cell;
+}
+  </pre>
+
+  <h2>Delegate</h2>
+
+  <p>
+    The UITableViewDelegate manages both how the table is displayed and
+    lets the app respond to events. Lets use a delegate method to
+    log a message whenever a table cell is pressed.
+  </p>
+
+  <pre>
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  NSDictionary *question = questions[indexPath.row];
+  NSLog(@"The user pressed %@", question[@"question"]);
+}
+  </pre>
+
+  <p>
+    While writing out some text to the debugger may not be exciting,
+    this demonstraits that we can access the touched object and then
+    take action based on that action. If you wanted to navigate the
+    user to a detailed view of the question that was selected,
+    this is the place you would do it.
+  </p>
+</section>
+
+
+
+

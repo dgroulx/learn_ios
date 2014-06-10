@@ -1,10 +1,10 @@
 --- 
-title: Text Input 
+title: Text Input and Delegation
 ---
 
 <p> 
   It's nice that we can get the answers from the text game, but it'd
-  be nice if it would let us guess. Lets add text input to the game.
+  be better if it would let us guess. Lets add text input to the game.
   In XCode, view the XIB file. In the inspector, click Enabled for the
   answer UITextField. Rerun the program and see what happens.  </p>
 
@@ -27,7 +27,52 @@ title: Text Input
   from UIViewController. The other way is to say that a class implements
   a protocol. A protocol is a collection of methods. In this case,
   we want our custom view controller class to conform to the UITextFieldDelegate
-  protocol.
+  protocol. First, in the header file, specify that this class will
+  implement the UITextFieldDelegate.
 </p>
+
+<pre>
+@interface QuizViewController : UIViewController &lt;UITextFieldDelegate&gt;
+</pre>
+
+<p>
+  Lookup UITextFieldDelegate in the XCode documentation. You'll see a list
+  of methods that the UITextField will send to its delegate object. This
+  is how you can hook into the events on the text field. In this case,
+  we need to take an action when the user asks to stop editing text.
+  Look at the documentation for <code>textFieldShouldEndEditing:</code>.
+  Lets implemente this method in the controller implementation file.
+</p>
+
+<pre>
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+  [textField resignFirstResponder];
+  return YES;
+}
+</pre>
+
+<p>
+  <code>resignFirstResponder</code> is an odd, indirect way of
+  dimissing the keyboard, but it's how it's done. iOS has an
+  idea of a responder chain, where there is a hierarchy of objects
+  that can respond to any UI event, where the FirstResponder is the
+  current object. When a UITextField is set as the FirstResponder by
+  being clicked on, the system presents the keyboard. You have
+  to manually release first responder status to let the keyboard go
+  away.
+</p>
+
+<p>
+  Now that you've made sure that your ViewController implements the
+  UITextViewDelegate protocol, run the program again....and it
+  doesn't work. We need to tell the UITextField that the ViewController
+  is it's delegate. Do this editing the XIB file. Click and drag
+  from the UITextView to the File's Owner box on the left side which
+  represents the ViewController. Run again and everything should work.
+</p>
+
+
+
+
 
 
