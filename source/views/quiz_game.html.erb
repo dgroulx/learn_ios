@@ -79,7 +79,7 @@ title: Quiz Game
 {
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if (self) {
-    NSDictionary *q1 = @{@"question": @"What is 5 + 2?", @"answer": @""};
+    NSDictionary *q1 = @{@"question": @"What is 5 + 2?", @"answer": @"7"};
     NSDictionary *q2 = @{@"question": @"What is the capitol of South Dakota?", @"answer": @"Pierre"};
     NSDictionary *q3 = @{@"question": @"How are you feeling today?", @"answer": @"Fine"};
     questions = @[q1, q2, q3];
@@ -110,7 +110,7 @@ title: Quiz Game
   </pre>
 
   <p>
-    Notice that there are little circles to the right of the outlet declarations.
+    Notice that there are little circles to the left of the outlet declarations.
     This is a hint that you can connect UI elements to these outlets. In the
     Project Navigator, select the XIB file. The yellow cube on the left of the
     editor represents the view controller where we just created the outlets. Hold
